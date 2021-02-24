@@ -40,9 +40,9 @@ function writeMasterList(fileDir, url, {duration, sequence, segments}) {
     m3u8.push('#EXT-X-ALLOW-CACHE:YES');
     m3u8.push(`#EXT-X-TARGETDURATION:${duration}`);
     m3u8.push(`#EXT-X-MEDIA-SEQUENCE:${sequence}`);
-    if (segments.find(s => s.discontinuity)) {
+    /*if (segments.find(s => s.discontinuity)) {
         m3u8.push('#EXT-X-DISCONTINUITY-SEQUENCE:0');
-    }
+    }*/
     for(let i=0; i<segments.length; i++) {
         const segment = segments[i];
         if (segment.discontinuity) {
@@ -151,7 +151,7 @@ class Emission {
             
             const knownErrors = [
                 'Invalid argument',
-                'No such file or directory',                
+                'No such file or directory',
                 'Invalid data found when processing input',
                 'No streams to mux were specified'
             ];
