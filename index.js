@@ -88,8 +88,7 @@ class Emission {
     get input() { return this._input; }
     get segmentTime() { return this._segmentTime; }
     get listSize() { return this._listSize; }
-    get timestamp() { return this._timestamp; }    
-    get list() { return this._list; }
+    get timestamp() { return this._timestamp; }
 
     /**
      * Get parameters for spawn call of a given rendition
@@ -203,7 +202,7 @@ class Emission {
      * @returns {Boolean} 
      */
     get isEmpty() {
-        for(let res in this.list) {
+        for(let res in this._list) {
             if (this._list[res].length > 0) {
                 return false;
             }            
@@ -301,7 +300,7 @@ module.exports = class FileStreaming {
     /**
      * Starts an emission interrupting the current
      * @param {String} input Input to stream
-     * @returns {Promise} Promise to start the emission
+     * @returns {Promise<Emission>} Promise to start the emission
      */
     emit(input) {
         return new Promise( (resolve, reject) => {            
