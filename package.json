@@ -1,6 +1,6 @@
 {
   "name": "file-streaming",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Live Streaming based on files",
   "main": "index.js",
   "scripts": {
