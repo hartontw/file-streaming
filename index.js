@@ -89,6 +89,7 @@ class Emission {
     get segmentTime() { return this._segmentTime; }
     get listSize() { return this._listSize; }
     get timestamp() { return this._timestamp; }
+    get list() { return Object.freeze(this._list); }
 
     /**
      * Get parameters for spawn call of a given rendition
